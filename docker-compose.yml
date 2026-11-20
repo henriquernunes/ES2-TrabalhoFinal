@@ -107,6 +107,32 @@ services:
     ports:
       - "${GATEWAY_PORT}:8080"
 
+  acompanhamento:
+    build: ./acompanhamento
+    restart: unless-stopped
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      discovery-server:
+        condition: service_healthy
+      # erro do moodle o serviço trata, não precisa esperar ficar healthy
+      moodle:
+        condition: service_started
+    environment:
+      EUREKA_URL: http://discovery-server:8761/eureka
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      MOODLE_URL: ${MOODLE_URL}
+      MOODLE_PUBLIC_URL: ${MOODLE_PUBLIC_URL}
+      MOODLE_TOKEN: ${MOODLE_TOKEN}
+      MOODLE_COURSE_ID: ${MOODLE_COURSE_ID}
+      MOODLE_TIMEOUT_MS: ${MOODLE_TIMEOUT_MS}
+      POLL_INTERVAL_SECONDS: ${POLL_INTERVAL_SECONDS}
+      REMINDER_WINDOW_HOURS: ${REMINDER_WINDOW_HOURS}
+    ports:
+      - "${ACOMPANHAMENTO_PORT}:8080"
+
 volumes:
   moodle_db:
   moodle_html:

@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: acompanhamento
+  jackson:
+    # json em snake_case (api e mensagens)
+    property-naming-strategy: SNAKE_CASE
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    # pro waitForConfirmsOrDie no publish
+    publisher-confirm-type: simple
+
+reengajamento:
+  course-id: ${MOODLE_COURSE_ID:2}
+  poll-interval-seconds: ${POLL_INTERVAL_SECONDS:3600}
+  reminder-window-hours: ${REMINDER_WINDOW_HOURS:24}
+  moodle:
+    url: ${MOODLE_URL:http://localhost:8080}
+    public-url: ${MOODLE_PUBLIC_URL:http://localhost:8080}
+    # fica vazio até rodar o seed
+    token: ${MOODLE_TOKEN:}
+    timeout: ${MOODLE_TIMEOUT_MS:10000}ms
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    # valores baixos pra demo, senão o gateway demora pra achar o serviço
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+    health-check-url-path: /health
+    status-page-url-path: /status
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: health
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /docs
+
+logging:
+  structured:
+    format:
+      console: logstash

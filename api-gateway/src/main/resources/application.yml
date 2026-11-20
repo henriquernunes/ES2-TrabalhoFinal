@@ -5,6 +5,10 @@ spring:
   application:
     name: api-gateway
   cloud:
+    loadbalancer:
+      # pra não ficar mandando pra instância que já caiu
+      cache:
+        ttl: 5s
     gateway:
       server:
         webflux:
@@ -30,6 +34,8 @@ eureka:
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
 
 management:
   endpoints:

@@ -1,0 +1,4 @@
+# sem eureka nos testes
+eureka:
+  client:
+    enabled: false
