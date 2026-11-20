@@ -42,3 +42,7 @@ management:
     web:
       exposure:
         include: health,info,gateway
+  endpoint:
+    gateway:
+      # /actuator/gateway/routes só leitura
+      access: read-only
