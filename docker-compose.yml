@@ -133,9 +133,56 @@ services:
     ports:
       - "${ACOMPANHAMENTO_PORT}:8080"
 
+  notificacoes-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${NOTIFICACOES_DB_NAME}
+      POSTGRES_USER: ${NOTIFICACOES_DB_USER}
+      POSTGRES_PASSWORD: ${NOTIFICACOES_DB_PASSWORD}
+    volumes:
+      - notificacoes_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  notificacoes:
+    build: ./notificacoes
+    restart: unless-stopped
+    depends_on:
+      notificacoes-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      discovery-server:
+        condition: service_healthy
+      # se o smtp estiver fora entra no retry
+      mailpit:
+        condition: service_started
+    environment:
+      EUREKA_URL: http://discovery-server:8761/eureka
+      NOTIFICACOES_DB_HOST: notificacoes-db
+      NOTIFICACOES_DB_NAME: ${NOTIFICACOES_DB_NAME}
+      NOTIFICACOES_DB_USER: ${NOTIFICACOES_DB_USER}
+      NOTIFICACOES_DB_PASSWORD: ${NOTIFICACOES_DB_PASSWORD}
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_FROM: ${SMTP_FROM}
+      SMTP_TIMEOUT_MS: ${SMTP_TIMEOUT_MS}
+      MAX_RETRIES: ${MAX_RETRIES}
+      RETRY_BASE_DELAY_MS: ${RETRY_BASE_DELAY_MS}
+    ports:
+      - "${NOTIFICACOES_PORT}:8080"
+
 volumes:
   moodle_db:
   moodle_html:
   moodle_data:
   rabbitmq_data:
   mailpit_data:
+  notificacoes_db:

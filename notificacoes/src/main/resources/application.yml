@@ -1,0 +1,82 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: notificacoes
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  datasource:
+    url: jdbc:postgresql://${NOTIFICACOES_DB_HOST:localhost}:${NOTIFICACOES_DB_PORT:5432}/${NOTIFICACOES_DB_NAME:notificacoes}
+    username: ${NOTIFICACOES_DB_USER:notificacoes}
+    password: ${NOTIFICACOES_DB_PASSWORD:notificacoes}
+  jpa:
+    open-in-view: false
+    hibernate:
+      # quem cria o schema é o flyway
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    publisher-confirm-type: simple
+    listener:
+      simple:
+        # ack manual, uma msg por vez
+        acknowledge-mode: manual
+        prefetch: 1
+        default-requeue-rejected: false
+  mail:
+    host: ${SMTP_HOST:localhost}
+    port: ${SMTP_PORT:1025}
+    properties:
+      mail.smtp.connectiontimeout: ${SMTP_TIMEOUT_MS:5000}
+      mail.smtp.timeout: ${SMTP_TIMEOUT_MS:5000}
+      mail.smtp.writetimeout: ${SMTP_TIMEOUT_MS:5000}
+
+notificacoes:
+  smtp-from: ${SMTP_FROM:Moodle Reengajamento <nao-responda@example.com>}
+  max-retries: ${MAX_RETRIES:5}
+  retry-base-delay: ${RETRY_BASE_DELAY_MS:5000}ms
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    # valores baixos pra demo, senão o gateway demora pra achar o serviço
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+    health-check-url-path: /health
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: health
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+  health:
+    # smtp fora não deixa o serviço unhealthy (tem retry)
+    mail:
+      enabled: false
+
+springdoc:
+  swagger-ui:
+    path: /docs
+
+logging:
+  structured:
+    format:
+      console: logstash
