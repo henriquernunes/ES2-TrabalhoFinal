@@ -1,0 +1,98 @@
+name: reengajamento
+
+services:
+  moodle-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${MOODLE_DB_NAME}
+      POSTGRES_USER: ${MOODLE_DB_USER}
+      POSTGRES_PASSWORD: ${MOODLE_DB_PASSWORD}
+    volumes:
+      - moodle_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  moodle:
+    image: erseco/alpine-moodle:v5.3.1
+    restart: unless-stopped
+    depends_on:
+      moodle-db:
+        condition: service_healthy
+    environment:
+      SITE_URL: ${MOODLE_PUBLIC_URL}
+      DB_TYPE: pgsql
+      DB_HOST: moodle-db
+      DB_PORT: 5432
+      DB_NAME: ${MOODLE_DB_NAME}
+      DB_USER: ${MOODLE_DB_USER}
+      DB_PASS: ${MOODLE_DB_PASSWORD}
+      MOODLE_USERNAME: ${MOODLE_ADMIN_USER}
+      MOODLE_PASSWORD: ${MOODLE_ADMIN_PASSWORD}
+      MOODLE_EMAIL: ${MOODLE_ADMIN_EMAIL}
+      MOODLE_SITENAME: Moodle_Reengajamento
+      MOODLE_LANGUAGE: en
+      # o moodle não manda email (noemailever), mas aponta pro mailpit por garantia
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_USER: ""
+      SMTP_PASSWORD: ""
+      SMTP_PROTOCOL: ""
+      MOODLE_MAIL_NOREPLY_ADDRESS: noreply@example.com
+    ports:
+      - "${MOODLE_PORT}:8080"
+    volumes:
+      - moodle_html:/var/www/html
+      - moodle_data:/var/www/moodledata
+    healthcheck:
+      # fpm-ping não basta, tem que esperar a instalação terminar
+      test: ["CMD-SHELL", "curl -sf -o /dev/null http://127.0.0.1:8080/login/index.php || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+      start_period: 120s
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_port_connectivity"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  mailpit:
+    image: axllent/mailpit:v1.34
+    restart: unless-stopped
+    environment:
+      # pros emails não sumirem quando o teste para o mailpit
+      MP_DATABASE: /data/mailpit.db
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    volumes:
+      - mailpit_data:/data
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  moodle_db:
+  moodle_html:
+  moodle_data:
+  rabbitmq_data:
+  mailpit_data:
