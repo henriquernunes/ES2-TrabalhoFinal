@@ -1,0 +1,18 @@
+[INFO] Running br.pucrs.es2.notificacoes.mail.LembreteTemplateTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s -- in br.pucrs.es2.notificacoes.mail.LembreteTemplateTest
+[INFO] Running br.pucrs.es2.notificacoes.mail.MailServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.447 s -- in br.pucrs.es2.notificacoes.mail.MailServiceTest
+[INFO] Running br.pucrs.es2.notificacoes.notificacao.NotificacoesServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s -- in br.pucrs.es2.notificacoes.notificacao.NotificacoesServiceTest
+[INFO] Running br.pucrs.es2.notificacoes.notificacao.NotificacaoRepositoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.583 s -- in br.pucrs.es2.notificacoes.notificacao.NotificacaoRepositoryTest
+[INFO] Running br.pucrs.es2.notificacoes.notificacao.NotificacoesControllerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 s -- in br.pucrs.es2.notificacoes.notificacao.NotificacoesControllerTest
+[INFO] Running br.pucrs.es2.notificacoes.NotificacoesApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.715 s -- in br.pucrs.es2.notificacoes.NotificacoesApplicationTests
+[INFO] Running br.pucrs.es2.notificacoes.messaging.RetryPolicyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in br.pucrs.es2.notificacoes.messaging.RetryPolicyTest
+[INFO] Running br.pucrs.es2.notificacoes.messaging.SolicitacoesListenerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s -- in br.pucrs.es2.notificacoes.messaging.SolicitacoesListenerTest
+[INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

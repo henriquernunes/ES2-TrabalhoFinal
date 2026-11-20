@@ -1,0 +1,381 @@
+$ make clean && make up && make seed && make e2e   # 2026-11-20T20:53:36Z
+docker compose down -v
+ Container reengajamento-acompanhamento-1 Stopping 
+ Container reengajamento-notificacoes-1 Stopping 
+ Container reengajamento-api-gateway-1 Stopping 
+ Container reengajamento-acompanhamento-1 Stopped 
+ Container reengajamento-acompanhamento-1 Removing 
+ Container reengajamento-api-gateway-1 Stopped 
+ Container reengajamento-api-gateway-1 Removing 
+ Container reengajamento-acompanhamento-1 Removed 
+ Container reengajamento-moodle-1 Stopping 
+ Container reengajamento-api-gateway-1 Removed 
+ Container reengajamento-notificacoes-1 Stopped 
+ Container reengajamento-notificacoes-1 Removing 
+ Container reengajamento-notificacoes-1 Removed 
+ Container reengajamento-discovery-server-1 Stopping 
+ Container reengajamento-mailpit-1 Stopping 
+ Container reengajamento-rabbitmq-1 Stopping 
+ Container reengajamento-notificacoes-db-1 Stopping 
+ Container reengajamento-notificacoes-db-1 Stopped 
+ Container reengajamento-notificacoes-db-1 Removing 
+ Container reengajamento-notificacoes-db-1 Removed 
+ Container reengajamento-discovery-server-1 Stopped 
+ Container reengajamento-discovery-server-1 Removing 
+ Container reengajamento-discovery-server-1 Removed 
+ Container reengajamento-mailpit-1 Stopped 
+ Container reengajamento-mailpit-1 Removing 
+ Container reengajamento-mailpit-1 Removed 
+ Container reengajamento-moodle-1 Stopped 
+ Container reengajamento-moodle-1 Removing 
+ Container reengajamento-moodle-1 Removed 
+ Container reengajamento-moodle-db-1 Stopping 
+ Container reengajamento-moodle-db-1 Stopped 
+ Container reengajamento-moodle-db-1 Removing 
+ Container reengajamento-rabbitmq-1 Stopped 
+ Container reengajamento-rabbitmq-1 Removing 
+ Container reengajamento-moodle-db-1 Removed 
+ Container reengajamento-rabbitmq-1 Removed 
+ Volume reengajamento_moodle_html Removing 
+ Network reengajamento_default Removing 
+ Volume reengajamento_moodle_db Removing 
+ Volume reengajamento_moodle_data Removing 
+ Volume reengajamento_notificacoes_db Removing 
+ Volume reengajamento_rabbitmq_data Removing 
+ Volume reengajamento_mailpit_data Removing 
+ Network reengajamento_default Removed 
+ Volume reengajamento_moodle_html Removed 
+ Volume reengajamento_moodle_data Removed 
+ Volume reengajamento_notificacoes_db Removed 
+ Volume reengajamento_mailpit_data Removed 
+ Volume reengajamento_moodle_db Removed 
+ Volume reengajamento_rabbitmq_data Removed 
+docker compose up -d --build --wait
+ Image reengajamento-notificacoes Building 
+ Image reengajamento-api-gateway Building 
+ Image reengajamento-acompanhamento Building 
+ Image reengajamento-discovery-server Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.27kB done
+#1 DONE 0.0s
+
+#2 [discovery-server internal] load build definition from Dockerfile
+#2 transferring dockerfile: 659B done
+#2 DONE 0.0s
+
+#3 [acompanhamento internal] load build definition from Dockerfile
+#3 transferring dockerfile: 662B 0.0s done
+#3 DONE 0.0s
+
+#4 [notificacoes internal] load build definition from Dockerfile
+#4 transferring dockerfile: 662B done
+#4 DONE 0.0s
+
+#5 [api-gateway internal] load build definition from Dockerfile
+#5 transferring dockerfile: 638B done
+#5 DONE 0.0s
+
+#6 [api-gateway internal] load metadata for docker.io/library/maven:3.9-eclipse-temurin-21
+#6 DONE 0.7s
+
+#7 [discovery-server internal] load metadata for docker.io/library/eclipse-temurin:21-jre-alpine
+#7 DONE 0.7s
+
+#8 [discovery-server internal] load .dockerignore
+#8 transferring context: 83B done
+#8 DONE 0.0s
+
+#9 [notificacoes internal] load .dockerignore
+#9 transferring context: 83B done
+#9 DONE 0.0s
+
+#10 [api-gateway internal] load .dockerignore
+#10 transferring context: 83B done
+#10 DONE 0.0s
+
+#11 [acompanhamento internal] load .dockerignore
+#11 transferring context: 83B done
+#11 DONE 0.0s
+
+#12 [api-gateway stage-1 1/4] FROM docker.io/library/eclipse-temurin:21-jre-alpine@sha256:<token-mascarado><token-mascarado>
+#12 resolve docker.io/library/eclipse-temurin:21-jre-alpine@sha256:<token-mascarado><token-mascarado> done
+#12 DONE 0.0s
+
+#13 [acompanhamento build 1/5] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:<token-mascarado><token-mascarado>
+#13 resolve docker.io/library/maven:3.9-eclipse-temurin-21@sha256:<token-mascarado><token-mascarado> done
+#13 DONE 0.0s
+
+#14 [discovery-server internal] load build context
+#14 transferring context: 807B done
+#14 DONE 0.0s
+
+#15 [notificacoes internal] load build context
+#15 transferring context: 4.13kB done
+#15 DONE 0.0s
+
+#16 [discovery-server build 4/5] COPY src ./src
+#16 CACHED
+
+#17 [discovery-server build 5/5] RUN --mount=type=cache,target=/root/.m2 mvn -B -q package -DskipTests
+#17 CACHED
+
+#18 [discovery-server build 3/5] COPY pom.xml .
+#18 CACHED
+
+#19 [acompanhamento internal] load build context
+#19 transferring context: 4.22kB done
+#19 DONE 0.0s
+
+#20 [discovery-server stage-1 4/4] COPY --from=build /app/target/*.jar app.jar
+#20 CACHED
+
+#21 [api-gateway internal] load build context
+#21 transferring context: 888B done
+#21 DONE 0.0s
+
+#22 [notificacoes build 5/5] RUN --mount=type=cache,target=/root/.m2 mvn -B -q package -DskipTests
+#22 CACHED
+
+#23 [notificacoes build 3/5] COPY pom.xml .
+#23 CACHED
+
+#24 [notificacoes build 4/5] COPY src ./src
+#24 CACHED
+
+#25 [api-gateway build 5/5] RUN --mount=type=cache,target=/root/.m2 mvn -B -q package -DskipTests
+#25 CACHED
+
+#26 [api-gateway build 3/5] COPY pom.xml .
+#26 CACHED
+
+#27 [api-gateway build 4/5] COPY src ./src
+#27 CACHED
+
+#28 [acompanhamento build 5/5] RUN --mount=type=cache,target=/root/.m2 mvn -B -q package -DskipTests
+#28 CACHED
+
+#29 [api-gateway stage-1 2/4] WORKDIR /app
+#29 CACHED
+
+#30 [acompanhamento build 4/5] COPY src ./src
+#30 CACHED
+
+#31 [api-gateway build 2/5] WORKDIR /app
+#31 CACHED
+
+#32 [acompanhamento build 3/5] COPY pom.xml .
+#32 CACHED
+
+#33 [api-gateway stage-1 3/4] RUN addgroup -S app && adduser -S app -G app
+#33 CACHED
+
+#34 [acompanhamento stage-1 4/4] COPY --from=build /app/target/*.jar app.jar
+#34 CACHED
+
+#35 [notificacoes stage-1 4/4] COPY --from=build /app/target/*.jar app.jar
+#35 CACHED
+
+#36 [api-gateway stage-1 4/4] COPY --from=build /app/target/*.jar app.jar
+#36 CACHED
+
+#37 [acompanhamento] exporting to image
+#37 exporting layers done
+#37 exporting manifest sha256:<token-mascarado><token-mascarado> done
+#37 exporting config sha256:<token-mascarado><token-mascarado> done
+#37 exporting attestation manifest sha256:<token-mascarado><token-mascarado> 0.0s done
+#37 exporting manifest list sha256:<token-mascarado><token-mascarado> 0.0s done
+#37 naming to docker.io/library/reengajamento-acompanhamento:latest done
+#37 unpacking to docker.io/library/reengajamento-acompanhamento:latest done
+#37 DONE 0.1s
+
+#38 [discovery-server] exporting to image
+#38 exporting layers done
+#38 exporting manifest sha256:<token-mascarado><token-mascarado> done
+#38 exporting config sha256:<token-mascarado><token-mascarado> done
+#38 exporting attestation manifest sha256:<token-mascarado><token-mascarado> 0.0s done
+#38 exporting manifest list sha256:<token-mascarado><token-mascarado> 0.0s done
+#38 naming to docker.io/library/reengajamento-discovery-server:latest done
+#38 unpacking to docker.io/library/reengajamento-discovery-server:latest done
+#38 DONE 0.1s
+
+#39 [api-gateway] exporting to image
+#39 exporting layers done
+#39 exporting manifest sha256:<token-mascarado><token-mascarado> 0.0s done
+#39 exporting config sha256:<token-mascarado><token-mascarado> done
+#39 exporting attestation manifest sha256:<token-mascarado><token-mascarado> 0.0s done
+#39 exporting manifest list sha256:<token-mascarado><token-mascarado> 0.0s done
+#39 naming to docker.io/library/reengajamento-api-gateway:latest done
+#39 unpacking to docker.io/library/reengajamento-api-gateway:latest done
+#39 DONE 0.1s
+
+#40 [notificacoes] exporting to image
+#40 exporting layers done
+#40 exporting manifest sha256:<token-mascarado><token-mascarado> done
+#40 exporting config sha256:<token-mascarado><token-mascarado> 0.1s done
+#40 exporting attestation manifest sha256:<token-mascarado><token-mascarado> 0.0s done
+#40 exporting manifest list sha256:<token-mascarado><token-mascarado> 0.0s done
+#40 naming to docker.io/library/reengajamento-notificacoes:latest done
+#40 unpacking to docker.io/library/reengajamento-notificacoes:latest done
+#40 DONE 0.1s
+
+#41 [discovery-server] resolving provenance for metadata file
+#41 DONE 0.0s
+
+#42 [acompanhamento] resolving provenance for metadata file
+#42 DONE 0.0s
+
+#43 [notificacoes] resolving provenance for metadata file
+#43 DONE 0.0s
+
+#44 [api-gateway] resolving provenance for metadata file
+#44 DONE 0.0s
+ Image reengajamento-discovery-server Built 
+ Image reengajamento-api-gateway Built 
+ Image reengajamento-acompanhamento Built 
+ Image reengajamento-notificacoes Built 
+ Network reengajamento_default Creating 
+ Network reengajamento_default Created 
+ Volume reengajamento_mailpit_data Creating 
+ Volume reengajamento_mailpit_data Created 
+ Volume reengajamento_moodle_db Creating 
+ Volume reengajamento_moodle_db Created 
+ Volume reengajamento_rabbitmq_data Creating 
+ Volume reengajamento_rabbitmq_data Created 
+ Volume reengajamento_notificacoes_db Creating 
+ Volume reengajamento_notificacoes_db Created 
+ Volume reengajamento_moodle_html Creating 
+ Volume reengajamento_moodle_html Created 
+ Volume reengajamento_moodle_data Creating 
+ Volume reengajamento_moodle_data Created 
+ Container reengajamento-rabbitmq-1 Creating 
+ Container reengajamento-discovery-server-1 Creating 
+ Container reengajamento-notificacoes-db-1 Creating 
+ Container reengajamento-mailpit-1 Creating 
+ Container reengajamento-moodle-db-1 Creating 
+ Container reengajamento-mailpit-1 Created 
+ Container reengajamento-discovery-server-1 Created 
+ Container reengajamento-api-gateway-1 Creating 
+ Container reengajamento-rabbitmq-1 Created 
+ Container reengajamento-moodle-db-1 Created 
+ Container reengajamento-moodle-1 Creating 
+ Container reengajamento-notificacoes-db-1 Created 
+ Container reengajamento-notificacoes-1 Creating 
+ Container reengajamento-api-gateway-1 Created 
+ Container reengajamento-notificacoes-1 Created 
+ Container reengajamento-moodle-1 Created 
+ Container reengajamento-acompanhamento-1 Creating 
+ Container reengajamento-acompanhamento-1 Created 
+ Container reengajamento-mailpit-1 Starting 
+ Container reengajamento-discovery-server-1 Starting 
+ Container reengajamento-moodle-db-1 Starting 
+ Container reengajamento-notificacoes-db-1 Starting 
+ Container reengajamento-rabbitmq-1 Starting 
+ Container reengajamento-moodle-db-1 Started 
+ Container reengajamento-moodle-db-1 Waiting 
+ Container reengajamento-mailpit-1 Started 
+ Container reengajamento-discovery-server-1 Started 
+ Container reengajamento-discovery-server-1 Waiting 
+ Container reengajamento-rabbitmq-1 Started 
+ Container reengajamento-notificacoes-db-1 Started 
+ Container reengajamento-notificacoes-db-1 Waiting 
+ Container reengajamento-rabbitmq-1 Waiting 
+ Container reengajamento-discovery-server-1 Waiting 
+ Container reengajamento-moodle-db-1 Healthy 
+ Container reengajamento-moodle-1 Starting 
+ Container reengajamento-discovery-server-1 Healthy 
+ Container reengajamento-api-gateway-1 Starting 
+ Container reengajamento-moodle-1 Started 
+ Container reengajamento-rabbitmq-1 Waiting 
+ Container reengajamento-discovery-server-1 Waiting 
+ Container reengajamento-discovery-server-1 Healthy 
+ Container reengajamento-notificacoes-db-1 Healthy 
+ Container reengajamento-api-gateway-1 Started 
+ Container reengajamento-discovery-server-1 Healthy 
+ Container reengajamento-rabbitmq-1 Healthy 
+ Container reengajamento-acompanhamento-1 Starting 
+ Container reengajamento-rabbitmq-1 Healthy 
+ Container reengajamento-notificacoes-1 Starting 
+ Container reengajamento-acompanhamento-1 Started 
+ Container reengajamento-notificacoes-1 Started 
+ Container reengajamento-acompanhamento-1 Waiting 
+ Container reengajamento-api-gateway-1 Waiting 
+ Container reengajamento-mailpit-1 Waiting 
+ Container reengajamento-discovery-server-1 Waiting 
+ Container reengajamento-moodle-1 Waiting 
+ Container reengajamento-rabbitmq-1 Waiting 
+ Container reengajamento-notificacoes-db-1 Waiting 
+ Container reengajamento-moodle-db-1 Waiting 
+ Container reengajamento-notificacoes-1 Waiting 
+ Container reengajamento-discovery-server-1 Healthy 
+ Container reengajamento-api-gateway-1 Healthy 
+ Container reengajamento-rabbitmq-1 Healthy 
+ Container reengajamento-notificacoes-db-1 Healthy 
+ Container reengajamento-mailpit-1 Healthy 
+ Container reengajamento-moodle-db-1 Healthy 
+ Container reengajamento-acompanhamento-1 Healthy 
+ Container reengajamento-notificacoes-1 Healthy 
+ Container reengajamento-moodle-1 Healthy 
+scripts/seed_moodle.sh 
+[seed] aguardando o Moodle ficar saudável...
+[seed] webservices habilitados (protocolo rest); e-mails do Moodle desligados
+[seed] usuário de serviço 'ws_reengajamento' (id 3) com papel 'ws_reengajamento'
+[seed] serviço externo 'reengajamento' com 3 funções
+[seed] disciplina 'Engenharia de Software II' (id 2)
+[seed] 5 alunos matriculados como estudantes
+[seed] T1 criada (cmid 2, prazo Saturday, 21 November 2026, 8:54 AM)
+[seed] T2 criada (cmid 3, prazo Saturday, 21 November 2026, 8:54 AM)
+[seed] T3 criada (cmid 4, prazo Monday, 23 November 2026, 8:54 PM)
+[seed] T4 criada (cmid 5, prazo Wednesday, 18 November 2026, 8:54 PM)
+[seed] T5 criada (cmid 6, prazo nenhum)
+[seed] submissão 'submitted' de aluno1 na T2
+MOODLE_TOKEN=<token-mascarado>
+MOODLE_COURSE_ID=2
+
+================================================================
+ Token do webservice: <token-mascarado>
+ Disciplina (MOODLE_COURSE_ID): 2
+================================================================
+[seed] .env atualizado com MOODLE_TOKEN e MOODLE_COURSE_ID
+[seed] acompanhamento recriado para carregar o token
+cd tests/e2e && ./mvnw -B -ntp test
+[INFO] Scanning for projects...
+[INFO] Loaded 24560 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] --------------------------< br.pucrs.es2:e2e >--------------------------
+[INFO] Building e2e 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ e2e ---
+[INFO] skip non existing resourceDirectory /Users/henriquenunes/Desktop/dev/pucrs/ES2-TrabalhoFinal/tests/e2e/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.16.0:compile (default-compile) @ e2e ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ e2e ---
+[INFO] skip non existing resourceDirectory /Users/henriquenunes/Desktop/dev/pucrs/ES2-TrabalhoFinal/tests/e2e/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.16.0:testCompile (default-testCompile) @ e2e ---
+[WARNING] I/O error reading dependency state: /Users/henriquenunes/Desktop/dev/pucrs/ES2-TrabalhoFinal/tests/e2e/target/classes: /Users/henriquenunes/Desktop/dev/pucrs/ES2-TrabalhoFinal/tests/e2e/target/classes
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.6.1:test (default-test) @ e2e ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running br.pucrs.es2.e2e.CriteriosAceiteE2ETest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 99.44 s -- in br.pucrs.es2.e2e.CriteriosAceiteE2ETest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:41 min
+[INFO] Finished at: 2026-11-20T17:56:21-03:00
+[INFO] ------------------------------------------------------------------------
+EXIT=0

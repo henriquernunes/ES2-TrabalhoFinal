@@ -1,0 +1,30 @@
+{
+  "reprocessar" : {
+    "idempotency_key" : "2:1:4",
+    "status_atual" : "ENVIADO",
+    "mensagem" : "republicada; já ENVIADO, o consumidor vai ignorar (idempotência)"
+  },
+  "ciclo" : {
+    "trigger" : "manual",
+    "started_at" : "2026-11-20T20:55:37.049552383Z",
+    "finished_at" : "2026-11-20T20:55:37.331253383Z",
+    "tarefas_analisadas" : 5,
+    "tarefas_na_janela" : 2,
+    "alunos_analisados" : 5,
+    "solicitacoes_publicadas" : 9,
+    "erros" : [ ]
+  },
+  "registro" : {
+    "idempotency_key" : "2:1:4",
+    "status" : "ENVIADO",
+    "tentativas" : 1,
+    "ultimo_erro" : null,
+    "user_email" : "aluno1@example.com",
+    "assign_name" : "T1 - Diagrama de casos de uso",
+    "criado_em" : "2026-11-20T20:55:32.798599Z",
+    "atualizado_em" : "2026-11-20T20:55:32.918979Z",
+    "enviado_em" : "2026-11-20T20:55:32.918979Z"
+  },
+  "emails_antes" : 9,
+  "emails_depois" : 9
+}

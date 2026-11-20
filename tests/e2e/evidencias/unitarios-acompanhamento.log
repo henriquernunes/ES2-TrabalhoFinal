@@ -1,0 +1,18 @@
+[INFO] Running br.pucrs.es2.acompanhamento.moodle.MoodleClientTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s -- in br.pucrs.es2.acompanhamento.moodle.MoodleClientTest
+[INFO] Running br.pucrs.es2.acompanhamento.moodle.MoodleParamsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in br.pucrs.es2.acompanhamento.moodle.MoodleParamsTest
+[INFO] Running br.pucrs.es2.acompanhamento.moodle.MoodleServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.420 s -- in br.pucrs.es2.acompanhamento.moodle.MoodleServiceTest
+[INFO] Running br.pucrs.es2.acompanhamento.reengajamento.ReminderRulesTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s -- in br.pucrs.es2.acompanhamento.reengajamento.ReminderRulesTest
+[INFO] Running br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.050 s -- in br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoServiceTest
+[INFO] Running br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoControllerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.824 s -- in br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoControllerTest
+[INFO] Running br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoSchedulerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in br.pucrs.es2.acompanhamento.reengajamento.ReengajamentoSchedulerTest
+[INFO] Running br.pucrs.es2.acompanhamento.AcompanhamentoApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.671 s -- in br.pucrs.es2.acompanhamento.AcompanhamentoApplicationTests
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

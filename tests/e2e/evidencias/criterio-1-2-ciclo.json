@@ -1,0 +1,10 @@
+{
+  "trigger" : "manual",
+  "started_at" : "2026-11-20T20:55:32.016795380Z",
+  "finished_at" : "2026-11-20T20:55:32.709596922Z",
+  "tarefas_analisadas" : 5,
+  "tarefas_na_janela" : 2,
+  "alunos_analisados" : 5,
+  "solicitacoes_publicadas" : 9,
+  "erros" : [ ]
+}

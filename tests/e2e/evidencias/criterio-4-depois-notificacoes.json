@@ -1,0 +1,91 @@
+[ {
+  "idempotency_key" : "2:2:8",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno5@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.315945Z",
+  "atualizado_em" : "2026-11-20T20:56:12.570651Z",
+  "enviado_em" : "2026-11-20T20:56:12.570651Z"
+}, {
+  "idempotency_key" : "2:2:7",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno4@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.310871Z",
+  "atualizado_em" : "2026-11-20T20:56:12.563621Z",
+  "enviado_em" : "2026-11-20T20:56:12.563621Z"
+}, {
+  "idempotency_key" : "2:2:6",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno3@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.302047Z",
+  "atualizado_em" : "2026-11-20T20:56:12.557086Z",
+  "enviado_em" : "2026-11-20T20:56:12.557086Z"
+}, {
+  "idempotency_key" : "2:2:5",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno2@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.294173Z",
+  "atualizado_em" : "2026-11-20T20:56:12.548251Z",
+  "enviado_em" : "2026-11-20T20:56:12.548251Z"
+}, {
+  "idempotency_key" : "2:1:8",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno5@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.287101Z",
+  "atualizado_em" : "2026-11-20T20:56:12.539600Z",
+  "enviado_em" : "2026-11-20T20:56:12.539600Z"
+}, {
+  "idempotency_key" : "2:1:7",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno4@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.281602Z",
+  "atualizado_em" : "2026-11-20T20:56:12.531253Z",
+  "enviado_em" : "2026-11-20T20:56:12.531253Z"
+}, {
+  "idempotency_key" : "2:1:6",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno3@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.274865Z",
+  "atualizado_em" : "2026-11-20T20:56:12.521819Z",
+  "enviado_em" : "2026-11-20T20:56:12.521819Z"
+}, {
+  "idempotency_key" : "2:1:5",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno2@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.266410Z",
+  "atualizado_em" : "2026-11-20T20:56:12.509889Z",
+  "enviado_em" : "2026-11-20T20:56:12.509889Z"
+}, {
+  "idempotency_key" : "2:1:4",
+  "status" : "ENVIADO",
+  "tentativas" : 4,
+  "ultimo_erro" : null,
+  "user_email" : "aluno1@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.169076Z",
+  "atualizado_em" : "2026-11-20T20:56:12.491899Z",
+  "enviado_em" : "2026-11-20T20:56:12.491899Z"
+} ]

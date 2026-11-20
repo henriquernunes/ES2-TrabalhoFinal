@@ -1,0 +1,28 @@
+[ {
+  "assunto" : "Lembrete: a tarefa \"T1 - Diagrama de casos de uso\" vence em breve",
+  "para" : "aluno1@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T1 - Diagrama de casos de uso\" vence em breve",
+  "para" : "aluno2@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T1 - Diagrama de casos de uso\" vence em breve",
+  "para" : "aluno3@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T1 - Diagrama de casos de uso\" vence em breve",
+  "para" : "aluno4@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T1 - Diagrama de casos de uso\" vence em breve",
+  "para" : "aluno5@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T2 - Modelo de domínio\" vence em breve",
+  "para" : "aluno2@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T2 - Modelo de domínio\" vence em breve",
+  "para" : "aluno3@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T2 - Modelo de domínio\" vence em breve",
+  "para" : "aluno4@example.com"
+}, {
+  "assunto" : "Lembrete: a tarefa \"T2 - Modelo de domínio\" vence em breve",
+  "para" : "aluno5@example.com"
+} ]

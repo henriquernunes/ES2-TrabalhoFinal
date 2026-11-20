@@ -1,0 +1,91 @@
+[ {
+  "idempotency_key" : "2:2:8",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno5@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.315945Z",
+  "atualizado_em" : "2026-11-20T20:55:51.318090Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:2:7",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno4@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.310871Z",
+  "atualizado_em" : "2026-11-20T20:55:51.313152Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:2:6",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno3@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.302047Z",
+  "atualizado_em" : "2026-11-20T20:55:51.307337Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:2:5",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno2@example.com",
+  "assign_name" : "T2 - Modelo de domínio",
+  "criado_em" : "2026-11-20T20:55:51.294173Z",
+  "atualizado_em" : "2026-11-20T20:55:51.297249Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:1:8",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno5@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.287101Z",
+  "atualizado_em" : "2026-11-20T20:55:51.289927Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:1:7",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno4@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.281602Z",
+  "atualizado_em" : "2026-11-20T20:55:51.284103Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:1:6",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno3@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.274865Z",
+  "atualizado_em" : "2026-11-20T20:55:51.277506Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:1:5",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno2@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.266410Z",
+  "atualizado_em" : "2026-11-20T20:55:51.270352Z",
+  "enviado_em" : null
+}, {
+  "idempotency_key" : "2:1:4",
+  "status" : "PENDENTE",
+  "tentativas" : 1,
+  "ultimo_erro" : "MailSendException: Mail server connection failed. Failed messages: org.eclipse.angus.mail.util.MailConnectException: Couldn't connect to host, port: mailpit, 1025; timeout 2000;\n  nested exception is:\n\tjava.net.UnknownHostException: mailpit",
+  "user_email" : "aluno1@example.com",
+  "assign_name" : "T1 - Diagrama de casos de uso",
+  "criado_em" : "2026-11-20T20:55:51.169076Z",
+  "atualizado_em" : "2026-11-20T20:55:51.243695Z",
+  "enviado_em" : null
+} ]
